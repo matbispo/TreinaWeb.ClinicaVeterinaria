@@ -1,0 +1,80 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Web", "1 - Web", "{CFC30B6E-7402-4C4C-B7EB-385F7C785497}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infra", "4 - Infra", "{C91F2A7D-58F8-4E37-BFDB-25D4E3E3BED6}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Data", "Data", "{D6EB3710-2BF3-4ABE-ACC3-088931DD138D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "CrossCutting", "CrossCutting", "{5CAB6F65-5803-4647-B7CB-CE0C92F2F2DF}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Model", "3 - Model", "{204D7716-888A-48F3-81B2-E5FB653EE5C4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.ClinicaVeterinaria.Web", "TreinaWeb.ClinicaVeterinaria.Web\TreinaWeb.ClinicaVeterinaria.Web.csproj", "{51681962-CB3E-4B7D-97C1-0DAC338CE310}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.ClinicaVeterinaria.Model", "TreinaWeb.ClinicaVeterinaria.Model\TreinaWeb.ClinicaVeterinaria.Model.csproj", "{A3A0D8A0-06DF-41A1-AC55-8E4FB8EAD5A1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.ClinicaVeterinaria.Identity", "TreinaWeb.ClinicaVeterinaria.Identity\TreinaWeb.ClinicaVeterinaria.Identity.csproj", "{69CE462B-1512-4FB2-85CE-BD29F90D7541}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Identity", "Identity", "{9B96A078-FE9F-4181-B77B-53F303C7E925}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "IoC", "IoC", "{62326174-09A1-4674-BFAD-4B3ECA2C361A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.ClinicaVeterinaria.IoC", "TreinaWeb.ClinicaVeterinaria.IoT\TreinaWeb.ClinicaVeterinaria.IoC.csproj", "{4EC3EAC3-CA73-4F61-95C0-034191AEFF42}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.ClinicaVeterinaria.Data", "TreinaWeb.ClinicaVeterinaria.Data\TreinaWeb.ClinicaVeterinaria.Data.csproj", "{3BA19D66-7B60-4ACB-90CD-B6F8A812EBA1}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Aplication", "2 - Aplication", "{679D5F51-773C-44E5-BA8C-0B91E468753C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TreinaWeb.ClinicaVeterinaria.Aplication", "TreinaWeb.ClinicaVeterinaria.Aplication\TreinaWeb.ClinicaVeterinaria.Aplication.csproj", "{809923BC-DBDB-4785-AFC8-21D29739C604}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{51681962-CB3E-4B7D-97C1-0DAC338CE310}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51681962-CB3E-4B7D-97C1-0DAC338CE310}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51681962-CB3E-4B7D-97C1-0DAC338CE310}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51681962-CB3E-4B7D-97C1-0DAC338CE310}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3A0D8A0-06DF-41A1-AC55-8E4FB8EAD5A1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3A0D8A0-06DF-41A1-AC55-8E4FB8EAD5A1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3A0D8A0-06DF-41A1-AC55-8E4FB8EAD5A1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3A0D8A0-06DF-41A1-AC55-8E4FB8EAD5A1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{69CE462B-1512-4FB2-85CE-BD29F90D7541}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{69CE462B-1512-4FB2-85CE-BD29F90D7541}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{69CE462B-1512-4FB2-85CE-BD29F90D7541}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{69CE462B-1512-4FB2-85CE-BD29F90D7541}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4EC3EAC3-CA73-4F61-95C0-034191AEFF42}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4EC3EAC3-CA73-4F61-95C0-034191AEFF42}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4EC3EAC3-CA73-4F61-95C0-034191AEFF42}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4EC3EAC3-CA73-4F61-95C0-034191AEFF42}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3BA19D66-7B60-4ACB-90CD-B6F8A812EBA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3BA19D66-7B60-4ACB-90CD-B6F8A812EBA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3BA19D66-7B60-4ACB-90CD-B6F8A812EBA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3BA19D66-7B60-4ACB-90CD-B6F8A812EBA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{809923BC-DBDB-4785-AFC8-21D29739C604}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{809923BC-DBDB-4785-AFC8-21D29739C604}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{809923BC-DBDB-4785-AFC8-21D29739C604}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{809923BC-DBDB-4785-AFC8-21D29739C604}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{D6EB3710-2BF3-4ABE-ACC3-088931DD138D} = {C91F2A7D-58F8-4E37-BFDB-25D4E3E3BED6}
+		{5CAB6F65-5803-4647-B7CB-CE0C92F2F2DF} = {C91F2A7D-58F8-4E37-BFDB-25D4E3E3BED6}
+		{51681962-CB3E-4B7D-97C1-0DAC338CE310} = {CFC30B6E-7402-4C4C-B7EB-385F7C785497}
+		{A3A0D8A0-06DF-41A1-AC55-8E4FB8EAD5A1} = {204D7716-888A-48F3-81B2-E5FB653EE5C4}
+		{69CE462B-1512-4FB2-85CE-BD29F90D7541} = {9B96A078-FE9F-4181-B77B-53F303C7E925}
+		{9B96A078-FE9F-4181-B77B-53F303C7E925} = {5CAB6F65-5803-4647-B7CB-CE0C92F2F2DF}
+		{62326174-09A1-4674-BFAD-4B3ECA2C361A} = {5CAB6F65-5803-4647-B7CB-CE0C92F2F2DF}
+		{4EC3EAC3-CA73-4F61-95C0-034191AEFF42} = {62326174-09A1-4674-BFAD-4B3ECA2C361A}
+		{3BA19D66-7B60-4ACB-90CD-B6F8A812EBA1} = {D6EB3710-2BF3-4ABE-ACC3-088931DD138D}
+		{809923BC-DBDB-4785-AFC8-21D29739C604} = {679D5F51-773C-44E5-BA8C-0B91E468753C}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,45 @@
+﻿@model IEnumerable<TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels.AnimalViewModel>
+
+@{
+    ViewBag.Title = "Animais";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "AddAnimal")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Raca)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NomeDono)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Raca)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NomeDono)
+        </td>
+        <td>
+            @Html.ActionLink("Alterar", "AnimalUpdate", new { id=item.AnimalId }) |
+            @Html.ActionLink("Detalhes", "AnimalDetails", new { id=item.AnimalId }) |
+            @Html.ActionLink("Excluir", "AnimalDelete", new { id=item.AnimalId })
+        </td>
+    </tr>
+}
+
+</table>
