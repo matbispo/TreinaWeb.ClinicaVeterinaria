@@ -18,7 +18,7 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels
 
         [Display(Name = "Numero do conselho regional de veterinaria")]
         [Required(ErrorMessage = "Campo obrigatorio")]
-        [StringLength(50, ErrorMessage = "Limite de 50 caracteres"), MinLength(7, ErrorMessage = "Minmo de 7 caracteres")]
+       // [StringLength(50, ErrorMessage = "Limite de 50 caracteres"), MinLength(7, ErrorMessage = "Minmo de 7 caracteres")]
         public int NumeroCRV { get; set; }
     }
 }

@@ -27,10 +27,11 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.Aplications
             _animalRepository.Add(animalEntt);
         }
 
-        public void Delete(AnimalViewModel obj)
+        public void Delete(int id)
         {
-            var animalEntt = Mapper.Map<AnimalViewModel, Animal>(obj);
-             _animalRepository.Delete(animalEntt);
+            //var animalEntt = Mapper.Map<AnimalViewModel, Animal>(obj);
+            var obj = _animalRepository.SearchById(id);
+             _animalRepository.Delete(obj);
         }
 
         public IEnumerable<AnimalViewModel> SearchAll()

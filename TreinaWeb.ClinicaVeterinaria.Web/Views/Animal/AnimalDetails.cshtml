@@ -1,0 +1,42 @@
+﻿@model TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels.AnimalViewModel
+
+@{
+    ViewBag.Title = "Detalhes | Animal";
+}
+
+<h2>Detalhes: Animal</h2>
+
+<div>
+    <h4>Animal</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Raca)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Raca)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NomeDono)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NomeDono)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "AnimalUpdate", new { id = Model.AnimalId }) |
+    @Html.ActionLink("Inicio", "Index")
+</p>

@@ -26,10 +26,11 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.Aplications
             _medicoVet.Add(medicoVetEntt);
         }
 
-        public void Delete(MedicoVetViewModel obj)
+        public void Delete(int id)
         {
-            var medicoVetEntt = Mapper.Map<MedicoVetViewModel, MedicoVeterinario>(obj);
-            _medicoVet.Delete(medicoVetEntt);
+            var obj = _medicoVet.SearchById(id);
+            //var medicoVetEntt = Mapper.Map<MedicoVetViewModel, MedicoVeterinario>(obj);
+            _medicoVet.Delete(obj);
         }
 
         public IEnumerable<MedicoVetViewModel> SearchAll()

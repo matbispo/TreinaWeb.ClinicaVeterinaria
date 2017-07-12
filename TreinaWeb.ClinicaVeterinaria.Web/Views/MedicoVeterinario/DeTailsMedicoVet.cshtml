@@ -1,0 +1,34 @@
+﻿@model TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels.MedicoVetViewModel
+
+@{
+    ViewBag.Title = "Detalhes| Medico veterinario";
+}
+
+<h2>Detalhes: Medico veterinario.</h2>
+
+<div>
+    <h4>Medico veterinario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.NumeroCRV)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.NumeroCRV)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "UpdateMedicoVet", new { id = Model.MedicoVetId }) |
+    @Html.ActionLink("Inicio", "Index")
+</p>

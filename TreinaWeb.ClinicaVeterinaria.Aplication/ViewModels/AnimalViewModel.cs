@@ -18,12 +18,12 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels
 
         [Display(Name = "Raça do Animal")]
         [Required(ErrorMessage = "Campo Obrigatorio")]
-        [StringLength(50, ErrorMessage = "Limite de 50 caracteres"), MinLength(5, ErrorMessage = "Minmo de 5 caracteres")]
+        [StringLength(50, ErrorMessage = "Limite de 50 caracteres"), MinLength(2, ErrorMessage = "Minmo de 5 caracteres")]
         public string Raca { get; set; }
 
         [Display(Name = "Nome do dono")]
         [Required(ErrorMessage = "Campo Obrigatorio")]
-        [StringLength(50, ErrorMessage = "Limite de 50 caracteres"), MinLength(5, ErrorMessage = "Minmo de 5 caracteres")]
+        [StringLength(50, ErrorMessage = "Limite de 50 caracteres"), MinLength(2, ErrorMessage = "Minmo de 5 caracteres")]
         public string NomeDono { get; set; }
     }
 }

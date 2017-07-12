@@ -1,0 +1,46 @@
+﻿@model IEnumerable<TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels.ProntuarioViewModel>
+
+@{
+    ViewBag.Title = "Prontuarios";
+}
+
+<h2>Prontuarios</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "AddProntuario")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.DataHoraAtendimento)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.medicoVeterinario.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.animal.Nome)
+           
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.DataHoraAtendimento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.medicoVeterinario.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.animal.Nome)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "UpdateProntuario", new { id=item.ProntuarioId }) |
+            @Html.ActionLink("Detalhes", "DetaisProntuario", new { id=item.ProntuarioId }) |
+            @Html.ActionLink("Deletar", "RemoveProntuario", new { id=item.ProntuarioId })
+        </td>
+    </tr>
+}
+
+</table>

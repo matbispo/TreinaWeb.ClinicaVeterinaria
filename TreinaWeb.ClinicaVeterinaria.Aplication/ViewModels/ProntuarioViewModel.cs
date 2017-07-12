@@ -33,5 +33,6 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels
 
         public virtual AnimalViewModel animal { get; set; }
         public virtual MedicoVetViewModel medicoVeterinario { get; set; }
+
     }
 }

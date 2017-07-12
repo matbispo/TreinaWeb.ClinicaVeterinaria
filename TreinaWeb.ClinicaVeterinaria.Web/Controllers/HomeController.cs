@@ -14,6 +14,11 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
             return View();
         }
 
+        public ActionResult Home()
+        {
+            return View();
+        }
+
         public ActionResult login() {
 
             return null;

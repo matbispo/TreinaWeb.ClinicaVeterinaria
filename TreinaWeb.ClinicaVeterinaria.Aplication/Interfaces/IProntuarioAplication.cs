@@ -11,5 +11,7 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.Interfaces
     public interface IProntuarioAplication: IAplicationBase<Prontuario, ProntuarioViewModel>
     {
         IEnumerable<ProntuarioViewModel> SearchByWord(string word);
+
+        MedicoVetAnimal getAnimalMedico();
     }
 }

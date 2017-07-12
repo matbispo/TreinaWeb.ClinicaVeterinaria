@@ -14,10 +14,14 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.Aplications
     public class ProntuarioAplication : IProntuarioAplication
     {
         private readonly IProntuarioRepository _prontuarioRepository;
+        private readonly IMedicoVetRepository _medicoApp;
+        private readonly IAnimalRepository _animalApp;
 
-        public ProntuarioAplication(IProntuarioRepository prontuarioRepository)
+        public ProntuarioAplication(IProntuarioRepository prontuarioRepository, IMedicoVetRepository medicoApp, IAnimalRepository animalApp)
         {
             _prontuarioRepository = prontuarioRepository;
+            _medicoApp = medicoApp;
+            _animalApp = animalApp;
         }
 
         public void Add(ProntuarioViewModel obj)
@@ -26,9 +30,10 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.Aplications
             _prontuarioRepository.Add(prontuarioEntt);
         }
 
-        public void Delete(ProntuarioViewModel obj)
+        public void Delete(int id)
         {
-            var prontuarioEntt = Mapper.Map<ProntuarioViewModel, Prontuario>(obj);
+            //var prontuarioEntt = Mapper.Map<ProntuarioViewModel, Prontuario>(obj);
+            var prontuarioEntt = _prontuarioRepository.SearchById(id);
             _prontuarioRepository.Delete(prontuarioEntt);
         }
 
@@ -36,12 +41,8 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.Aplications
         {
             var prontuarioEntt  = _prontuarioRepository.SearchAll();
 
-            var prontuarioVM = new List<ProntuarioViewModel>();
+            var prontuarioVM = Mapper.Map<IEnumerable<Prontuario>, IEnumerable<ProntuarioViewModel>>(prontuarioEntt); 
 
-            foreach (var item in prontuarioEntt)
-            {
-                prontuarioVM.Add(Mapper.Map<Prontuario, ProntuarioViewModel>(item));
-            }
             return prontuarioVM;
         }
 
@@ -58,12 +59,8 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.Aplications
         {
             var prontuarioEntt = _prontuarioRepository.SearchByWord(word);
 
-            var prontuarioVM = new List<ProntuarioViewModel>();
+            var prontuarioVM = Mapper.Map<IEnumerable<Prontuario>, IEnumerable<ProntuarioViewModel>>(prontuarioEntt);
 
-            foreach (var item in prontuarioEntt)
-            {
-                prontuarioVM.Add(Mapper.Map<Prontuario, ProntuarioViewModel>(item));
-            }
             return prontuarioVM;
         }
 
@@ -71,6 +68,16 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.Aplications
         {
             var prontuarioEntt = Mapper.Map<ProntuarioViewModel, Prontuario>(obj);
             _prontuarioRepository.Update(prontuarioEntt);
+        }
+
+        public MedicoVetAnimal getAnimalMedico()
+        {
+            var AnimalMedic = new MedicoVetAnimal();
+
+            AnimalMedic.animais = Mapper.Map<IEnumerable<Animal>, IEnumerable<AnimalViewModel>>(_animalApp.SearchAll());
+            AnimalMedic.medicoVeterinarios = Mapper.Map<IEnumerable<MedicoVeterinario>, IEnumerable<MedicoVetViewModel>>(_medicoApp.SearchAll());
+
+            return AnimalMedic;
         }
     }
 }

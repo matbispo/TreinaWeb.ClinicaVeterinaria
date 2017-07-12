@@ -1,0 +1,50 @@
+﻿@model TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels.ProntuarioViewModel
+
+@{
+    ViewBag.Title = "Detalhes | Prontuario";
+}
+
+<h2>Detalhes: Prontuario</h2>
+
+<div>
+    <h4>Prontuario</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.DataHoraAtendimento)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DataHoraAtendimento)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Observacoes)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Observacoes)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.medicoVeterinario.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.medicoVeterinario.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.animal.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.animal.Nome)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editar", "UpdateProntuario", new { id = Model.ProntuarioId }) |
+    @Html.ActionLink("Inicio", "Index")
+</p>

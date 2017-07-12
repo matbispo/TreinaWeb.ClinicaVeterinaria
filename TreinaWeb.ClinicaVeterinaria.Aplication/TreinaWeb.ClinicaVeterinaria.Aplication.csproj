@@ -55,6 +55,7 @@
     <Compile Include="Interfaces\IMedicoVetAplication.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AnimalViewModel.cs" />
+    <Compile Include="ViewModels\MedicoVetAnimal.cs" />
     <Compile Include="ViewModels\MedicoVetViewModel.cs" />
     <Compile Include="ViewModels\ProntuarioViewModel.cs" />
   </ItemGroup>

@@ -24,12 +24,6 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
             return View(ListAnial);
         }
 
-        public ActionResult SearchByname(string name) // implementar com ajax
-        {
-            var animalDetail = _animalApp.SearchByName(name);
-            return View(animalDetail);
-        }
-
         public ActionResult AddAnimal() // cria tela de cadastro
         {
             return View();
@@ -51,14 +45,14 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
 
         public ActionResult AnimalUpdate(int id) { // cria tela de atualização
 
-            if (id > 0)
-            {
+       /*     if (id > 0 )
+            {*/
                 var animalDetail = _animalApp.SearchById(id);
                 return View(animalDetail);
-            }
+       /*     }
             else {
                 return null; // retornar um erro
-            }
+            }*/
             
         }
         [HttpPost]
@@ -68,7 +62,7 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
             if (ModelState.IsValid)
             {
                 _animalApp.Update(animalVM);
-                return RedirectToAction("AnimalDetails", animalVM.AnimalId);
+                return RedirectToAction("AnimalDetails", new {@id = animalVM.AnimalId });
             }
             else {
                 return null; // erro
@@ -84,8 +78,14 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
         public ActionResult AnimalDelete(int id) // deletar
         {
             var animalDelete = _animalApp.SearchById(id);
-            _animalApp.Delete(animalDelete);
+            _animalApp.Delete(id);
             return RedirectToAction("Index");
+        }
+
+        public ActionResult SearchByname(string name) // implementar com ajax
+        {
+            var animalDetail = _animalApp.SearchByName(name);
+            return View(animalDetail);
         }
     }
 }

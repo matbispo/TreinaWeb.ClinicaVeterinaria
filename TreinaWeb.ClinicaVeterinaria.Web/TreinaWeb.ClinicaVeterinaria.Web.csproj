@@ -216,6 +216,17 @@
     <Content Include="Scripts\jquery-3.1.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.1.1.min.map" />
     <Content Include="Views\Animal\Index.cshtml" />
+    <Content Include="Views\MedicoVeterinario\Index.cshtml" />
+    <Content Include="Views\MedicoVeterinario\AddMedicoVet.cshtml" />
+    <Content Include="Views\MedicoVeterinario\UpdateMedicoVet.cshtml" />
+    <Content Include="Views\MedicoVeterinario\DetailsMedicoVet.cshtml" />
+    <Content Include="Views\Prontuario\Index.cshtml" />
+    <Content Include="Views\Animal\AddAnimal.cshtml" />
+    <Content Include="Views\Animal\AnimalDetails.cshtml" />
+    <Content Include="Views\Animal\AnimalUpdate.cshtml" />
+    <Content Include="Views\Prontuario\AddProntuario.cshtml" />
+    <Content Include="Views\Prontuario\UpdateProntuario.cshtml" />
+    <Content Include="Views\Prontuario\DetaisProntuario.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -248,8 +259,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\MedicoVeterinario\" />
-    <Folder Include="Views\Prontuario\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\TreinaWeb.ClinicaVeterinaria.Aplication\TreinaWeb.ClinicaVeterinaria.Aplication.csproj">

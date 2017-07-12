@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels.MedicoVetViewModel>
+
+@{
+    ViewBag.Title = "Medicos Veterinarios";
+}
+
+<h2>Medicos Veterinarios</h2>
+
+<p>
+    @Html.ActionLink("Cadastrar", "AddMedicoVet")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nome)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.NumeroCRV)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nome)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.NumeroCRV)
+        </td>
+        <td>
+            @Html.ActionLink("Editar", "UpdateMedicoVet", new { id=item.MedicoVetId }) |
+            @Html.ActionLink("Detalhes", "DeTailsMedicoVet", new { id=item.MedicoVetId }) |
+            @Html.ActionLink("Excluir", "DeleteMedicoVet", new { id=item.MedicoVetId })
+        </td>
+    </tr>
+}
+
+</table>
