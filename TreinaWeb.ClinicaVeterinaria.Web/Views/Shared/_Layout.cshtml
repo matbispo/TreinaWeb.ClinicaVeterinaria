@@ -23,6 +23,14 @@
                     <li>@Html.ActionLink("Animais", "Index", "Animal")</li>
                     <li>@Html.ActionLink("veterinarios", "Index", "MedicoVeterinario")</li>
                     <li>@Html.ActionLink("prontuario", "Index", "Prontuario")</li>
+                    @if (Request.IsAuthenticated)
+                    {   
+                         <li>olá, @User.Identity.Name | @Html.ActionLink("Sair", "Logoff", "Home")</li>
+                    }
+                    else
+                    {
+                        <li>@Html.ActionLink("Entrar", "Login", "Home")</li>
+                    }
                 </ul>
             </div>
             <div class="navbar-collapse collapse">

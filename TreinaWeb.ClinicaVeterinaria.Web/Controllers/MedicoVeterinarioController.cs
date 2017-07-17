@@ -8,6 +8,7 @@ using TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels;
 
 namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
 {
+    [Authorize]
     public class MedicoVeterinarioController : Controller
     {
         private readonly IMedicoVetAplication _medicoVetApp;
@@ -23,11 +24,13 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
             return View(listMedicoVet);
         }
 
+        [Authorize(Roles = "ADMIN")]
         public ActionResult AddMedicoVet()
         {
             return View();
         }
 
+        [Authorize(Roles = "ADMIN")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AddMedicoVet(MedicoVetViewModel medicoVet)
@@ -38,7 +41,8 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
                 return RedirectToAction("Index");
             }
             else {
-                return null;
+                ModelState.AddModelError("erro", "falha ao criar cadastro");
+                return View(ModelState);
             }        
         }
 
@@ -58,7 +62,8 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
                 return RedirectToAction("DetailsMedicoVet",new {@id= medicoVet.MedicoVetId });
             }
             else {
-                return null;
+                ModelState.AddModelError("erro", "falha em atualizar");
+                return View(ModelState);
             }
         }
 

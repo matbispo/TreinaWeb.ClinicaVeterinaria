@@ -9,6 +9,7 @@ using TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels;
 
 namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
 {
+    [Authorize]
     public class AnimalController : Controller
     {
         private readonly IAnimalAplication _animalApp;
@@ -39,20 +40,21 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
                 return RedirectToAction("Index");
             }
             else {
-                return null; // retornar erro
+                ModelState.AddModelError("erro","falha ao criar cadastro");
+                return View(ModelState); // retornar erro
             }
         }
 
         public ActionResult AnimalUpdate(int id) { // cria tela de atualização
 
-       /*     if (id > 0 )
-            {*/
+            if (id > 0 )
+            {
                 var animalDetail = _animalApp.SearchById(id);
                 return View(animalDetail);
-       /*     }
+            }
             else {
                 return null; // retornar um erro
-            }*/
+            }
             
         }
         [HttpPost]
@@ -65,7 +67,8 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
                 return RedirectToAction("AnimalDetails", new {@id = animalVM.AnimalId });
             }
             else {
-                return null; // erro
+                ModelState.AddModelError("erro", "falha em atualizar");
+                return View(ModelState);
             }
         }
 

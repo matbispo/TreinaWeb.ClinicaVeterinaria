@@ -14,6 +14,7 @@ namespace TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels
 
         [Display(Name = "Data do atendimento")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd-MM-yyyy}")]
+        [DataType(DataType.Date)]
         public DateTime? DataHoraAtendimento { get; set; }
 
         [Display(Name = "Observações")]

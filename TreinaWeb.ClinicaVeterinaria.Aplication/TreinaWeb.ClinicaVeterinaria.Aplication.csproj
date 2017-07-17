@@ -58,6 +58,7 @@
     <Compile Include="ViewModels\MedicoVetAnimal.cs" />
     <Compile Include="ViewModels\MedicoVetViewModel.cs" />
     <Compile Include="ViewModels\ProntuarioViewModel.cs" />
+    <Compile Include="ViewModels\UsuarioViewModel.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="app.config" />

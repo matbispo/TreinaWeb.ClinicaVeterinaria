@@ -8,6 +8,7 @@ using TreinaWeb.ClinicaVeterinaria.Aplication.ViewModels;
 
 namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
 {
+    [Authorize]
     public class ProntuarioController : Controller
     {
         private readonly IProntuarioAplication _prontuarioApp;
@@ -24,6 +25,7 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
             return View(listProntuarios);
         }
 
+        [Authorize(Roles = "MEDICOVET")]
         public ActionResult AddProntuario()
         {
             var listAnimaisMedicos = _prontuarioApp.getAnimalMedico();
@@ -36,6 +38,7 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
             return View();
         }
 
+        [Authorize(Roles ="MEDICOVET")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult AddProntuario(ProntuarioViewModel prontuario)
@@ -46,10 +49,12 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
                 return RedirectToAction("Index");
             }
             else {
-                return null;
+                ModelState.AddModelError("erro", "falha ao criar cadastro");
+                return View(ModelState);
             } 
         }
 
+        [Authorize(Roles = "MEDICOVET")]
         public ActionResult UpdateProntuario(int id)
         {
             var prontuario = _prontuarioApp.SearchById(id);
@@ -64,6 +69,7 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
             return View(prontuario);
         }
 
+        [Authorize(Roles = "MEDICOVET")]
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult UpdateProntuario(ProntuarioViewModel prontuario)
@@ -75,7 +81,8 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
             }
             else
             {
-                return null;
+                ModelState.AddModelError("erro", "falha em atualizar");
+                return View(ModelState);
             }
         }
 
@@ -85,6 +92,7 @@ namespace TreinaWeb.ClinicaVeterinaria.Web.Controllers
             return View(prontuario);
         }
 
+        [Authorize(Roles = "MEDICOVET")]
         public ActionResult RemoveProntuario(int id)
         {
             _prontuarioApp.Delete(id);
